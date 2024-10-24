@@ -11,7 +11,7 @@ const GameContext = createContext<GameContextType>({
   setGameState: () => {},
 });
 
-const MyGameContextProvider = ({ children }: { children: ReactNode }) => {
+const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [gameState, setGameState] = useState<GameState>(initialGameState);
 
   return (
@@ -21,4 +21,4 @@ const MyGameContextProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export { GameContext, MyGameContextProvider };
+export { GameContext, GameContextProvider };
