@@ -1,12 +1,8 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { formatNumber } from '../utils/number_helpers';
 import { GameContext } from '../contexts/GameContext';
 
-interface StatsDisplayProps {
-
-}
-
-const StatsDisplay: React.FC<StatsDisplayProps> = ({ }) => {
+const StatsDisplay = ({ }) => {
   const gameContext = useContext(GameContext);
 
   return (
