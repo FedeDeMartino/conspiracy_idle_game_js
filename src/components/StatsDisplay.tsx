@@ -7,13 +7,14 @@ interface StatsDisplayProps {
 }
 
 const StatsDisplay: React.FC<StatsDisplayProps> = ({ }) => {
-  const gameContect = useContext(GameContext);
+  const gameContext = useContext(GameContext);
+
   return (
     <div className="stats-display">
-      <p>Followers: {formatNumber(gameContect.gameState.followers)}</p>
-      <p>Followers per Click: {formatNumber(gameContect.gameState.followersPerClick)}</p>
-      <p>Followers per Second: {formatNumber(gameContect.gameState.followersPerSecond)}</p>
-      <p>Donations: {formatNumber(gameContect.gameState.donations)} $</p>
+      <p>Followers: {formatNumber(gameContext.gameState.followers)}</p>
+      <p>Followers per Click: {formatNumber(gameContext.gameState.followersPerClick)}</p>
+      <p>Followers per Second: {formatNumber(gameContext.getEffectiveFollowersPerSecond(gameContext.gameState))}</p>
+      <p>Donations: {formatNumber(gameContext.gameState.donations)} $</p>
     </div>
   );
 };

@@ -1,39 +1,30 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import StatsDisplay from './StatsDisplay';
 import ClickButton from './ClickButton';
 import ConspiracyDescription from './ConspiracyDescription';
 import ConspiracyList from './ConspiracyList';
-import { useGameState, useConspiracyManager } from '../utils/hooks';
-
+import { useConspiracyManager } from '../utils/hooks';
+import { useGameState } from '../utils/hooks';
 
 const Game: React.FC = () => {
   const { gameState, setGameState } = useGameState();
   const {
     warningMessage,
-    activeConspiracyDescription,
-    activeConspiracyName,
-    handleNewConspiracyClick,
+    handleNewConspiracyClick
   } = useConspiracyManager();
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     setGameState((prevState) => ({
       ...prevState,
       followers: prevState.followers + prevState.followersPerClick,
       donations: prevState.donations + prevState.followersPerClick,
     }));
-
-    if (gameState.followers === 10) {
-      setGameState((prevState) => ({
-        ...prevState,
-        followersPerSecond: 1,
-      }));
-    }
-  }, [gameState.followers, setGameState]);
+  };
 
   return (
     <div className="App">
       <h1>Conspiracy Idle Game</h1>
-      <ConspiracyDescription conspiracyText={activeConspiracyDescription} conspiracyName={activeConspiracyName} />
+      <ConspiracyDescription conspiracyText={gameState.activeConspiracy?.description} conspiracyName={gameState.activeConspiracy?.name} />
       <StatsDisplay />
       <ClickButton text='Click me!' onClick={handleClick} />
       <ClickButton text='Buy new Conspiracy' onClick={handleNewConspiracyClick} />
