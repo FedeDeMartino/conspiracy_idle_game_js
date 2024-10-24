@@ -1,13 +1,13 @@
 
-import { IGameState } from '../models/GameState';
+import { GameState } from '../models/GameState';
 
 const STORAGE_KEY = 'conspiracyIdleGameState';
 
-export const saveGameState = (state: IGameState): void => {
+export const saveGameState = (state: GameState): void => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 };
 
-export const loadGameState = (): IGameState | null => {
+export const loadGameState = (): GameState | null => {
   const data = localStorage.getItem(STORAGE_KEY);
-  return data ? JSON.parse(data) as IGameState : null;
+  return data ? JSON.parse(data) as GameState : null;
 };

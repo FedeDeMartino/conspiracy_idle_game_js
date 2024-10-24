@@ -1,6 +1,6 @@
 import { Conspiracy } from './Conspiracy';
 
-export interface IGameState {
+export interface GameState {
   followers: number,
   followersPerClick: number,
   followersPerSecond: number,
@@ -27,7 +27,7 @@ const initialDescription = "You need to start small...\n" +
                            "and it's time to blow this wide open!\n" +
                            "You have to spread the word before it's too late!!!"
 
-export const initialGameState: IGameState = {
+export const initialGameState: GameState = {
   followers: 0,
   followersPerClick: 1,
   followersPerSecond: 0,
