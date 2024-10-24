@@ -6,8 +6,8 @@ export interface GameState {
   followersPerSecond: number,
   donations: number,
   conspiracies: Conspiracy[];
-  activeConspiracyDescription?: string | null;
-  activeConspiracyName?: string | null;
+  activeConspiracy: Conspiracy | null;
+  followersPerSecondModifier: number;
 }
 
 const initialDescription = "You need to start small...\n" +
@@ -31,8 +31,8 @@ export const initialGameState: GameState = {
   followers: 0,
   followersPerClick: 1,
   followersPerSecond: 0,
+  followersPerSecondModifier: 1,
   donations: 0,
-  conspiracies: [new Conspiracy('Avocado Agenda', 10, 0, initialDescription)],
-  activeConspiracyDescription: initialDescription,
-  activeConspiracyName: 'Avocado Agenda'
+  conspiracies: [],
+  activeConspiracy: null,
 };

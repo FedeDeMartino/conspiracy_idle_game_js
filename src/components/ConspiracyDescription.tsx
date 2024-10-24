@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 interface ConspiracyDescriptionProps {
-  conspiracyName: string | null;
-  conspiracyText: string | null;
+  conspiracyName: string | null | undefined;
+  conspiracyText: string | null | undefined;
 }
 
 const ConspiracyDescription: React.FC<ConspiracyDescriptionProps> = ({ conspiracyText, conspiracyName }) => {
@@ -14,7 +14,7 @@ const ConspiracyDescription: React.FC<ConspiracyDescriptionProps> = ({ conspirac
   };
 
   useEffect(() => {
-    setPopupMessage(conspiracyText)
+    setPopupMessage(conspiracyText ?? null)
   }, [isPopupOpen, conspiracyText]);
 
   return (
