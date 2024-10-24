@@ -24,7 +24,7 @@ const Game: React.FC = () => {
   return (
     <div className="App">
       <h1>Conspiracy Idle Game</h1>
-      <ConspiracyDescription conspiracyText={gameState.activeConspiracy?.description} conspiracyName={gameState.activeConspiracy?.name} />
+      <ConspiracyDescription conspiracyText="About This Game" conspiracyName="About This Game" />
       <StatsDisplay />
       <ClickButton text='Click me!' onClick={handleClick} />
       <ClickButton text='Buy new Conspiracy' onClick={handleNewConspiracyClick} />

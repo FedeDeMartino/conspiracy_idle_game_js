@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 interface ConspiracyDescriptionProps {
   conspiracyName: string | null | undefined;
@@ -7,15 +7,10 @@ interface ConspiracyDescriptionProps {
 
 const ConspiracyDescription: React.FC<ConspiracyDescriptionProps> = ({ conspiracyText, conspiracyName }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [popupMessage, setPopupMessage] = useState<string | null>(null);
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
-
-  useEffect(() => {
-    setPopupMessage(conspiracyText ?? null)
-  }, [isPopupOpen, conspiracyText]);
 
   return (
     <div>
@@ -26,7 +21,7 @@ const ConspiracyDescription: React.FC<ConspiracyDescriptionProps> = ({ conspirac
       {isPopupOpen && (
         <div style={popupStyle}>
           <div style={popupContentStyle}>
-            <span>{popupMessage ?? 'Loading...'}</span>
+            <span>{conspiracyText ?? 'Loading...'}</span>
             <button onClick={togglePopup} style={closeButtonStyle}>
               Close
             </button>

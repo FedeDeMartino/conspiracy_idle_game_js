@@ -1,0 +1,9 @@
+
+.conspiracy-item-content {
+  display: flex;
+  align-items: center;
+}
+
+.conspiracy-item-content p {
+  margin-right: 10px;
+}
