@@ -1,14 +1,12 @@
-import { Conspiracy } from '../models/Conspiracy';
 import ConspiracyDescription from './ConspiracyDescription';
 import './ConspiracyList.css';
+import { useGameState } from '../utils/hooks';
 
-interface ConspiracyListProps {
-  conspiracies: Conspiracy[];
-}
+const ConspiracyList = ({}) => {
+  const { gameState } = useGameState();
 
-const ConspiracyList: React.FC<ConspiracyListProps> = ({ conspiracies }) => (
-  <ul>
-    {conspiracies.map((conspiracy) => (
+  return (<ul>
+    {gameState.conspiracies.map((conspiracy) => (
       <li key={conspiracy.name} className="conspiracy-item">
         <div className="conspiracy-item-content">
           <p>{conspiracy.name}</p>
@@ -19,7 +17,7 @@ const ConspiracyList: React.FC<ConspiracyListProps> = ({ conspiracies }) => (
         </div>
       </li>
     ))}
-  </ul>
-);
+  </ul>)
+};
 
 export default ConspiracyList;
