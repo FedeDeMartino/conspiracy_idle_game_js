@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { formatNumber } from '../utils/number_helpers';
-import { GameContext } from '../contexts/GameContext';
+import { formatNumber } from '../../utils/number_helpers';
+import { GameContext } from '../../contexts/GameContext';
 
 const StatsDisplay = ({ }) => {
   const gameContext = useContext(GameContext);

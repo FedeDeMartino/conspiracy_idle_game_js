@@ -1,9 +1,10 @@
-import ConspiracyDescription from './ConspiracyDescription';
+import { useContext } from 'react';
+import { GameContext } from '../../contexts/GameContext';
+import ConspiracyDescription from '../ConspiracyDescription';
 import './ConspiracyList.css';
-import { useGameState } from '../utils/hooks';
 
 const ConspiracyList = ({}) => {
-  const { gameState } = useGameState();
+  const { gameState } = useContext(GameContext);
 
   return (<ul>
     {gameState.conspiracies.map((conspiracy) => (

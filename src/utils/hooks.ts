@@ -1,33 +1,7 @@
-import { useState, useEffect, useContext } from 'react';
-import { initialGameState } from '../models/GameState';
+import { useState, useContext } from 'react';
 import { Conspiracy } from '../models/Conspiracy';
-import { loadGameState, saveGameState } from './storage';
 import { CONSPIRACIES } from '../data/conspiracies';
 import { GameContext } from '../contexts/GameContext';
-
-const useGameState = () => {
-  const { gameState, setGameState, getEffectiveFollowersPerSecond  } = useContext(GameContext);
-
-  useEffect(() => {
-    const state = loadGameState();
-    setGameState(state ?? initialGameState);
-    
-    const interval = setInterval(() => {
-      setGameState((prevState) => {
-        saveGameState(prevState);
-        return {
-          ...prevState,
-          followers: prevState.followers + getEffectiveFollowersPerSecond(prevState),
-          donations: prevState.donations + getEffectiveFollowersPerSecond(prevState)
-        };
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return { gameState, setGameState };
-};
 
 const useConspiracyManager = () => {
   const { gameState, setGameState } = useContext(GameContext);
@@ -64,4 +38,4 @@ const useConspiracyManager = () => {
   };
 };
 
-export { useGameState, useConspiracyManager };
+export { useConspiracyManager };
