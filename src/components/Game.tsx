@@ -3,12 +3,13 @@ import StatsDisplay from './StatsDisplay';
 import ClickButton from './ClickButton';
 import ConspiracyDescription from './ConspiracyDescription';
 import ConspiracyList from './ConspiracyList';
+import UpgradeList from './UpgradeList';
 import ResetGameButton from './ResetGameButton';
 import { useConspiracyManager } from '../utils/hooks';
 import { useGameState } from '../utils/hooks';
 
 const Game: React.FC = () => {
-  const { gameState, setGameState } = useGameState();
+  const { setGameState } = useGameState();
   const {
     warningMessage,
     handleNewConspiracyClick
@@ -33,6 +34,7 @@ const Game: React.FC = () => {
       {warningMessage && <h2>{warningMessage}</h2>}
       <h2>Active Conspiracies</h2>
       <ConspiracyList />
+      <UpgradeList />
     </div>
   );
 };

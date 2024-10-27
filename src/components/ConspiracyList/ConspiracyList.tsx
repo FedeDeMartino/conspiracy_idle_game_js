@@ -1,6 +1,6 @@
-import ConspiracyDescription from './ConspiracyDescription';
+import ConspiracyDescription from '../ConspiracyDescription';
 import './ConspiracyList.css';
-import { useGameState } from '../utils/hooks';
+import { useGameState } from '../../utils/hooks';
 
 const ConspiracyList = ({}) => {
   const { gameState } = useGameState();

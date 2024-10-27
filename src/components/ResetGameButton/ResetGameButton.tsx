@@ -1,5 +1,5 @@
-import { useGameState } from '../utils/hooks';
-import { initialGameState } from '../models/GameState';
+import { useGameState } from '../../utils/hooks';
+import { initialGameState } from '../../models/GameState';
 
 const ResetGameButton = ({}) => {
   const { setGameState } = useGameState();
