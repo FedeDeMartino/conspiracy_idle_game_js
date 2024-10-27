@@ -7,7 +7,7 @@ export const UPGRADES = [
     initialCost: 100,
     description: "Purchase a VPN to hide from authorities.",
     costModifier: 1.5,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.clicksPersSecond
   },
   {
@@ -16,7 +16,7 @@ export const UPGRADES = [
     initialCost: 200,
     description: "Establish a secure communication channel for your followers.",
     costModifier: 1.6,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.followersPerSecond
   },
   {
@@ -25,7 +25,7 @@ export const UPGRADES = [
     initialCost: 500,
     description: "Bring a skilled hacker onboard to access confidential information.",
     costModifier: 1.7,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.clicksPersSecond
   },
   {
@@ -34,7 +34,7 @@ export const UPGRADES = [
     initialCost: 800,
     description: "Spread your conspiracy theories wider through social media.",
     costModifier: 1.8,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.followersPerSecond
   },
   {
@@ -43,7 +43,7 @@ export const UPGRADES = [
     initialCost: 1200,
     description: "Buy a headquarters for your followers to gather.",
     costModifier: 2.0,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.followersPerSecond
   },
   {
@@ -52,7 +52,7 @@ export const UPGRADES = [
     initialCost: 1500,
     description: "Secure your data archives with advanced encryption.",
     costModifier: 2.2,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.clicksPersSecond
   },
   {
@@ -61,7 +61,7 @@ export const UPGRADES = [
     initialCost: 2000,
     description: "Create an app to keep your followers engaged on the go.",
     costModifier: 2.5,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.followersPerSecond
   },
   {
@@ -70,7 +70,7 @@ export const UPGRADES = [
     initialCost: 2500,
     description: "Enhance your servers to handle more follower data.",
     costModifier: 2.8,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.clicksPersSecond
   },
   {
@@ -79,7 +79,7 @@ export const UPGRADES = [
     initialCost: 3000,
     description: "Protect your operations with private security personnel.",
     costModifier: 3.0,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.clicksPersSecond
   },
   {
@@ -88,7 +88,7 @@ export const UPGRADES = [
     initialCost: 5000,
     description: "Gain the support of a public figure to spread your message.",
     costModifier: 3.5,
-    timesPurchased: 0,
+    timesPurchased: 1,
     modifierType: ModifierType.followersPerSecond
   }
 ];

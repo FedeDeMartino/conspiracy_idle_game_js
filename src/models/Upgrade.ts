@@ -1,4 +1,5 @@
 import { ModifierType } from '../enums/modifierTypeEnum'
+import { GameState } from './GameState'
 
 export interface IUpgrade {
   id: number,
@@ -8,6 +9,7 @@ export interface IUpgrade {
   costModifier: number,
   timesPurchased: number,
   modifierType: ModifierType,
+  buy(gameState: GameState): void
 }
 
 export class Upgrade implements IUpgrade {
@@ -27,5 +29,14 @@ export class Upgrade implements IUpgrade {
     this.costModifier = costModifier;
     this.timesPurchased = timesPurchased;
     this.modifierType = modifierType
+  }
+
+  buy(gameState: GameState): void {
+    gameState.donations -= this.currentCost();
+    this.timesPurchased++;
+  }
+  
+  currentCost(): number {
+    return this.initialCost * this.costModifier * this.timesPurchased;
   }
 }

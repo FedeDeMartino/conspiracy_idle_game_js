@@ -1,16 +1,17 @@
 import { useContext } from 'react';
 import { GameContext } from '../../contexts/GameContext';
 import ConspiracyDescription from '../ConspiracyDescription';
+import BuyUpgradeButton from '../BuyUpgradeButton';
 import './UpgradeList.css';
 
 const UpgradeList = ({}) => {
-  const { gameState } = useContext(GameContext);
+  const { gameState, restoreUpgrades } = useContext(GameContext);
 
   return (
     <div className="upgrade-list-container">
       <h3>Upgrades</h3>
       <ul>
-        {gameState.upgrades.map((upgrade) => (
+        {restoreUpgrades(gameState).map((upgrade) => (
           <li key={upgrade.name}>
             <div>
               <p>{upgrade.name}</p>
@@ -18,6 +19,7 @@ const UpgradeList = ({}) => {
                 conspiracyText={upgrade.description}
                 conspiracyName={upgrade.name}
               />
+              <BuyUpgradeButton upgrade={upgrade} />
             </div>
           </li>
         ))}
