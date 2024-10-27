@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/conspiracy_idle_game_js/static/css/main.d4bb41b2.css",
+    "main.js": "/conspiracy_idle_game_js/static/js/main.3ec57e42.js",
+    "static/js/453.59ead4bc.chunk.js": "/conspiracy_idle_game_js/static/js/453.59ead4bc.chunk.js",
+    "index.html": "/conspiracy_idle_game_js/index.html",
+    "main.d4bb41b2.css.map": "/conspiracy_idle_game_js/static/css/main.d4bb41b2.css.map",
+    "main.3ec57e42.js.map": "/conspiracy_idle_game_js/static/js/main.3ec57e42.js.map",
+    "453.59ead4bc.chunk.js.map": "/conspiracy_idle_game_js/static/js/453.59ead4bc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4bb41b2.css",
+    "static/js/main.3ec57e42.js"
+  ]
+}
