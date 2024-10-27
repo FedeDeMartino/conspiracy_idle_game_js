@@ -1,5 +1,7 @@
 # Conspiracy Idle Game [WIP]
 
+Alpha version: https://fededemartino.github.io/conspiracy_idle_game_js/
+
 *THIS IS STILL A WORK IN PROGRESS*
 
 Conspiracy Idle Game is a simple incremental game where players can "buy" conspiracies with followers and donations. The game features click-based mechanics, automatic resource generation, and descriptive popups for each conspiracy.
