@@ -1,5 +1,4 @@
 import { ModifierType } from '../enums/modifierTypeEnum'
-import { GameState } from './GameState'
 
 export interface IUpgrade {
   id: number,
