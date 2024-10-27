@@ -8,8 +8,7 @@ export interface IUpgrade {
   description: string,
   costModifier: number,
   timesPurchased: number,
-  modifierType: ModifierType,
-  buy(gameState: GameState): void
+  modifierType: ModifierType
 }
 
 export class Upgrade implements IUpgrade {
@@ -29,11 +28,6 @@ export class Upgrade implements IUpgrade {
     this.costModifier = costModifier;
     this.timesPurchased = timesPurchased;
     this.modifierType = modifierType
-  }
-
-  buy(gameState: GameState): void {
-    gameState.donations -= this.currentCost();
-    this.timesPurchased++;
   }
   
   currentCost(): number {

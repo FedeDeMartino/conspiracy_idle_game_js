@@ -4,11 +4,11 @@ export const UPGRADES = [
   {
     id: 1,
     name: "Buy a VPN",
-    initialCost: 100,
+    initialCost: 10,
     description: "Purchase a VPN to hide from authorities.",
     costModifier: 1.5,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPersSecond
+    modifierType: ModifierType.clicksPerSecond
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const UPGRADES = [
     description: "Bring a skilled hacker onboard to access confidential information.",
     costModifier: 1.7,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPersSecond
+    modifierType: ModifierType.clicksPerSecond
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ export const UPGRADES = [
     description: "Secure your data archives with advanced encryption.",
     costModifier: 2.2,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPersSecond
+    modifierType: ModifierType.clicksPerSecond
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ export const UPGRADES = [
     description: "Enhance your servers to handle more follower data.",
     costModifier: 2.8,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPersSecond
+    modifierType: ModifierType.clicksPerSecond
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const UPGRADES = [
     description: "Protect your operations with private security personnel.",
     costModifier: 3.0,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPersSecond
+    modifierType: ModifierType.clicksPerSecond
   },
   {
     id: 10,
