@@ -1,9 +1,10 @@
-import { useGameState } from '../../utils/hooks';
+import { useContext } from 'react';
+import { GameContext } from '../../contexts/GameContext';
 import ConspiracyDescription from '../ConspiracyDescription';
 import './UpgradeList.css';
 
 const UpgradeList = ({}) => {
-  const { gameState } = useGameState();
+  const { gameState } = useContext(GameContext);
 
   return (
     <div className="upgrade-list-container">

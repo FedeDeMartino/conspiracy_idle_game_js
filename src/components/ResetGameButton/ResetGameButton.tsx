@@ -1,8 +1,9 @@
-import { useGameState } from '../../utils/hooks';
+import { useContext } from 'react';
+import { GameContext } from '../../contexts/GameContext';
 import { initialGameState } from '../../models/GameState';
 
 const ResetGameButton = ({}) => {
-  const { setGameState } = useGameState();
+  const { setGameState } = useContext(GameContext);
 
   const resetGame = () => {
     setGameState(() => (initialGameState));

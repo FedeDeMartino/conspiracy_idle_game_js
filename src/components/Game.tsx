@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import StatsDisplay from './StatsDisplay';
 import ClickButton from './ClickButton';
 import ConspiracyDescription from './ConspiracyDescription';
@@ -6,14 +6,34 @@ import ConspiracyList from './ConspiracyList';
 import UpgradeList from './UpgradeList';
 import ResetGameButton from './ResetGameButton';
 import { useConspiracyManager } from '../utils/hooks';
-import { useGameState } from '../utils/hooks';
+import { loadGameState, saveGameState } from '../utils/storage';
+import { initialGameState } from '../models/GameState';
+import { GameContext } from '../contexts/GameContext';
 
 const Game: React.FC = () => {
-  const { setGameState } = useGameState();
+  const { setGameState, getEffectiveFollowersPerSecond  } = useContext(GameContext);
   const {
     warningMessage,
     handleNewConspiracyClick
   } = useConspiracyManager();
+
+  useEffect(() => {
+    const state = loadGameState();
+    setGameState(state ?? initialGameState);
+    
+    const interval = setInterval(() => {
+      setGameState((prevState) => {
+        saveGameState(prevState);
+        return {
+          ...prevState,
+          followers: prevState.followers + getEffectiveFollowersPerSecond(prevState),
+          donations: prevState.donations + getEffectiveFollowersPerSecond(prevState)
+        };
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleClick = () => {
     setGameState((prevState) => ({
