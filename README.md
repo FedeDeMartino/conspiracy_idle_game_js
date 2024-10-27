@@ -1,6 +1,6 @@
 # Conspiracy Idle Game [WIP]
 
-Alpha version: https://fededemartino.github.io/conspiracy_idle_game_js/
+Alpha version (not responsive): https://fededemartino.github.io/conspiracy_idle_game_js/
 
 *THIS IS STILL A WORK IN PROGRESS*
 
