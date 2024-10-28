@@ -27,7 +27,7 @@ const useConspiracyManager = () => {
       ],
       activeConspiracy: nextConspiracy,
       donations: prevState.donations - nextConspiracy.cost,
-      followersPerSecondModifier: (prevState.conspiracies.length + 1) * 1.5,
+      followersPerSecondModifier: prevState.followersPerSecondModifier * 1.5,
       followersPerSecond: 1,
     }));
   };

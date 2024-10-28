@@ -7,7 +7,8 @@ export interface IUpgrade {
   description: string,
   costModifier: number,
   timesPurchased: number,
-  modifierType: ModifierType
+  modifierType: ModifierType,
+  buffPercentage: number
 }
 
 export class Upgrade implements IUpgrade {
@@ -18,8 +19,9 @@ export class Upgrade implements IUpgrade {
   costModifier: number;
   timesPurchased: number;
   modifierType: ModifierType;
+  buffPercentage: number;
 
-  constructor(name: string, initialCost: number, id: number, description: string, costModifier: number, timesPurchased: number, modifierType: ModifierType) {
+  constructor(name: string, initialCost: number, id: number, description: string, costModifier: number, timesPurchased: number, modifierType: ModifierType, buffPercentage: number) {
     this.id = id
     this.name = name;
     this.initialCost = initialCost;
@@ -27,6 +29,7 @@ export class Upgrade implements IUpgrade {
     this.costModifier = costModifier;
     this.timesPurchased = timesPurchased;
     this.modifierType = modifierType
+    this.buffPercentage = buffPercentage;
   }
   
   currentCost(): number {

@@ -4,11 +4,9 @@ import { GameContextProvider } from './contexts/GameContext';
 const App: React.FC = () => {
   
   return (
-    <div className="App">
-      <GameContextProvider>
-        <Game />
-      </GameContextProvider>
-    </div>
+    <GameContextProvider>
+      <Game />
+    </GameContextProvider>
   );
 };
 

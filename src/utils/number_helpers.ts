@@ -4,3 +4,7 @@ export const formatNumber = (num: number): string => {
   if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
   return num.toFixed(2).toString();
 };
+
+export const roundToTwoDecimals = (num: number): number => {
+  return Math.round(num * 100) / 100;
+}

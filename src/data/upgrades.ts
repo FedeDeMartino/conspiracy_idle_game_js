@@ -8,16 +8,18 @@ export const UPGRADES = [
     description: "Purchase a VPN to hide from authorities.",
     costModifier: 1.5,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPerSecond
+    modifierType: ModifierType.clicksPerSecond,
+    buffPercentage: 0.05
   },
   {
     id: 2,
     name: "Set Up a Secure Chat",
-    initialCost: 200,
+    initialCost: 20,
     description: "Establish a secure communication channel for your followers.",
     costModifier: 1.6,
     timesPurchased: 1,
-    modifierType: ModifierType.followersPerSecond
+    modifierType: ModifierType.followersPerSecond,
+    buffPercentage: 0.06
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ export const UPGRADES = [
     description: "Bring a skilled hacker onboard to access confidential information.",
     costModifier: 1.7,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPerSecond
+    modifierType: ModifierType.clicksPerSecond,
+    buffPercentage: 0.07
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ export const UPGRADES = [
     description: "Spread your conspiracy theories wider through social media.",
     costModifier: 1.8,
     timesPurchased: 1,
-    modifierType: ModifierType.followersPerSecond
+    modifierType: ModifierType.followersPerSecond,
+    buffPercentage: 1.08
   },
   {
     id: 5,
@@ -44,7 +48,8 @@ export const UPGRADES = [
     description: "Buy a headquarters for your followers to gather.",
     costModifier: 2.0,
     timesPurchased: 1,
-    modifierType: ModifierType.followersPerSecond
+    modifierType: ModifierType.followersPerSecond,
+    buffPercentage: 0.09
   },
   {
     id: 6,
@@ -53,7 +58,8 @@ export const UPGRADES = [
     description: "Secure your data archives with advanced encryption.",
     costModifier: 2.2,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPerSecond
+    modifierType: ModifierType.clicksPerSecond,
+    buffPercentage: 0.10
   },
   {
     id: 7,
@@ -62,7 +68,8 @@ export const UPGRADES = [
     description: "Create an app to keep your followers engaged on the go.",
     costModifier: 2.5,
     timesPurchased: 1,
-    modifierType: ModifierType.followersPerSecond
+    modifierType: ModifierType.followersPerSecond,
+    buffPercentage: 0.11
   },
   {
     id: 8,
@@ -71,7 +78,8 @@ export const UPGRADES = [
     description: "Enhance your servers to handle more follower data.",
     costModifier: 2.8,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPerSecond
+    modifierType: ModifierType.clicksPerSecond,
+    buffPercentage: 0.12
   },
   {
     id: 9,
@@ -80,7 +88,8 @@ export const UPGRADES = [
     description: "Protect your operations with private security personnel.",
     costModifier: 3.0,
     timesPurchased: 1,
-    modifierType: ModifierType.clicksPerSecond
+    modifierType: ModifierType.clicksPerSecond,
+    buffPercentage: 0.13
   },
   {
     id: 10,
@@ -89,6 +98,7 @@ export const UPGRADES = [
     description: "Gain the support of a public figure to spread your message.",
     costModifier: 3.5,
     timesPurchased: 1,
-    modifierType: ModifierType.followersPerSecond
+    modifierType: ModifierType.followersPerSecond,
+    buffPercentage: 0.14
   }
 ];
