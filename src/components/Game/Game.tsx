@@ -7,7 +7,7 @@ import UpgradeList from '../UpgradeList';
 import ResetGameButton from '../ResetGameButton';
 import { useConspiracyManager } from '../../utils/hooks';
 import { loadGameState, saveGameState } from '../../utils/storage';
-import { initialGameState } from '../../models/GameState';
+import { initialGameState } from '../../types/GameState';
 import { GameContext } from '../../contexts/GameContext';
 import './Game.css';
 

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GameContext } from '../../contexts/GameContext';
-import { initialGameState } from '../../models/GameState';
+import { initialGameState } from '../../types/GameState';
 
 const ResetGameButton = ({}) => {
   const { setGameState } = useContext(GameContext);

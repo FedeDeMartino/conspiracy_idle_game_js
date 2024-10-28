@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Conspiracy } from '../models/Conspiracy';
+import { Conspiracy } from '../types/Conspiracy';
 import { CONSPIRACIES } from '../data/conspiracies';
 import { GameContext } from '../contexts/GameContext';
 
@@ -23,7 +23,12 @@ const useConspiracyManager = () => {
       ...prevState,
       conspiracies: [
         ...prevState.conspiracies,
-        new Conspiracy(nextConspiracy.name, nextConspiracy.cost, nextConspiracy.id, nextConspiracy.description),
+        {
+          name: nextConspiracy.name,
+          cost: nextConspiracy.cost,
+          id: nextConspiracy.id,
+          description: nextConspiracy.description
+        },
       ],
       activeConspiracy: nextConspiracy,
       donations: prevState.donations - nextConspiracy.cost,

@@ -5,13 +5,13 @@ import BuyUpgradeButton from '../BuyUpgradeButton';
 import './UpgradeList.css';
 
 const UpgradeList = ({}) => {
-  const { gameState, restoreUpgrades } = useContext(GameContext);
+  const { gameState } = useContext(GameContext);
 
   return (
     <div className="upgrade-list-container">
       <h3>Upgrades</h3>
       <ul>
-        {restoreUpgrades(gameState).map((upgrade) => (
+        {gameState.upgrades.map((upgrade) => (
           <li key={upgrade.name}>
             <div>
               <p>{upgrade.name}</p>

@@ -1,5 +1,5 @@
 
-import { GameState } from '../models/GameState';
+import { GameState } from '../types/GameState';
 
 const STORAGE_KEY = 'conspiracyIdleGameState';
 
