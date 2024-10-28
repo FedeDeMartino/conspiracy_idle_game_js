@@ -1,17 +1,18 @@
 import React, { useEffect, useContext } from 'react';
-import StatsDisplay from './StatsDisplay';
-import ClickButton from './ClickButton';
-import ConspiracyDescription from './ConspiracyDescription';
-import ConspiracyList from './ConspiracyList';
-import UpgradeList from './UpgradeList';
-import ResetGameButton from './ResetGameButton';
-import { useConspiracyManager } from '../utils/hooks';
-import { loadGameState, saveGameState } from '../utils/storage';
-import { initialGameState } from '../models/GameState';
-import { GameContext } from '../contexts/GameContext';
+import StatsDisplay from '../StatsDisplay';
+import ClickButton from '../ClickButton';
+import ConspiracyDescription from '../ConspiracyDescription';
+import ConspiracyList from '../ConspiracyList';
+import UpgradeList from '../UpgradeList';
+import ResetGameButton from '../ResetGameButton';
+import { useConspiracyManager } from '../../utils/hooks';
+import { loadGameState, saveGameState } from '../../utils/storage';
+import { initialGameState } from '../../models/GameState';
+import { GameContext } from '../../contexts/GameContext';
+import './Game.css';
 
 const Game: React.FC = () => {
-  const { setGameState, getEffectiveFollowersPerSecond  } = useContext(GameContext);
+  const { setGameState, getEffectiveFollowersPerSecond, getEffectiveClicksPerSecond  } = useContext(GameContext);
   const {
     warningMessage,
     handleNewConspiracyClick
@@ -38,13 +39,13 @@ const Game: React.FC = () => {
   const handleClick = () => {
     setGameState((prevState) => ({
       ...prevState,
-      followers: prevState.followers + prevState.followersPerClick,
-      donations: prevState.donations + prevState.followersPerClick,
+      followers: prevState.followers + getEffectiveClicksPerSecond(prevState),
+      donations: prevState.donations + getEffectiveClicksPerSecond(prevState),
     }));
   };
 
   return (
-    <div className="App">
+    <div className="game">
       <h1>Conspiracy Idle Game</h1>
       <ResetGameButton />
       <ConspiracyDescription conspiracyText="About This Game" conspiracyName="About This Game" />

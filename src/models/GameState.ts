@@ -11,6 +11,7 @@ export interface GameState {
   upgrades: Upgrade[];
   activeConspiracy: Conspiracy | null;
   followersPerSecondModifier: number;
+  followersPerClickModifier: number;
 }
 
 const CreateUpgrades = () => {
@@ -21,7 +22,8 @@ const CreateUpgrades = () => {
       upgrade.description,
       upgrade.costModifier,
       upgrade.timesPurchased,
-      upgrade.modifierType);
+      upgrade.modifierType,
+      upgrade.buffPercentage);
   });
 };
 
@@ -30,6 +32,7 @@ export const initialGameState: GameState = {
   followersPerClick: 1,
   followersPerSecond: 0,
   followersPerSecondModifier: 1,
+  followersPerClickModifier: 1,
   donations: 0,
   conspiracies: [],
   upgrades: CreateUpgrades(),

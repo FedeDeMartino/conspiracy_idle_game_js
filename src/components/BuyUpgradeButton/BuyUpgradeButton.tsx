@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { GameContext } from '../../contexts/GameContext';
 import { Upgrade } from '../../models/Upgrade';
 import { ModifierType } from '../../enums/modifierTypeEnum';
+import { roundToTwoDecimals } from '../../utils/number_helpers';
 
 interface BuyUpgradeButtonProps {
   upgrade: Upgrade;
@@ -34,9 +35,9 @@ const BuyUpgradeButton: React.FC<BuyUpgradeButtonProps> = ({ upgrade }) => {
     };
 
     if (upgrade.modifierType === ModifierType.clicksPerSecond) {
-      updatedGameState.followersPerClick += 0.5;
+      updatedGameState.followersPerClickModifier = roundToTwoDecimals(updatedGameState.followersPerClickModifier + upgrade.buffPercentage);
     } else {
-      updatedGameState.followersPerSecondModifier += 0.1;
+      updatedGameState.followersPerSecondModifier = roundToTwoDecimals(updatedGameState.followersPerSecondModifier + upgrade.buffPercentage);
     }
 
     setGameState(updatedGameState);
