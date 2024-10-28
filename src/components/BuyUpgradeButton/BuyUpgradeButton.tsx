@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { GameContext } from '../../contexts/GameContext';
-import { Upgrade } from '../../models/Upgrade';
+import { Upgrade } from '../../types/Upgrade';
 import { ModifierType } from '../../enums/modifierTypeEnum';
 import { roundToTwoDecimals } from '../../utils/number_helpers';
+import { upgradeCurrentCost } from '../../utils/upgrade_helpers';
 
 interface BuyUpgradeButtonProps {
   upgrade: Upgrade;
@@ -12,7 +13,7 @@ const BuyUpgradeButton: React.FC<BuyUpgradeButtonProps> = ({ upgrade }) => {
   const { gameState, setGameState } = useContext(GameContext);
 
   const buyUpgrade = () => {
-    const currentCost = upgrade.currentCost();
+    const currentCost = upgradeCurrentCost(upgrade);
 
     if (currentCost > gameState.donations) {
       return;
@@ -20,8 +21,7 @@ const BuyUpgradeButton: React.FC<BuyUpgradeButtonProps> = ({ upgrade }) => {
 
     const updatedUpgrade: Upgrade = {
       ...upgrade,
-      timesPurchased: upgrade.timesPurchased + 1,
-      currentCost: upgrade.currentCost,
+      timesPurchased: upgrade.timesPurchased + 1
     };
 
     const updatedUpgrades = gameState.upgrades.map((u) =>
@@ -43,7 +43,7 @@ const BuyUpgradeButton: React.FC<BuyUpgradeButtonProps> = ({ upgrade }) => {
     setGameState(updatedGameState);
   };
 
-  const isDisabled = upgrade.currentCost() > gameState.donations;
+  const isDisabled = upgradeCurrentCost(upgrade) > gameState.donations;
 
   return (
     <button onClick={buyUpgrade} disabled={isDisabled}>

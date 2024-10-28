@@ -16,14 +16,16 @@ export interface GameState {
 
 const CreateUpgrades = () => {
   return UPGRADES.map((upgrade) => {
-    return new Upgrade(upgrade.name,
-      upgrade.initialCost,
-      upgrade.id,
-      upgrade.description,
-      upgrade.costModifier,
-      upgrade.timesPurchased,
-      upgrade.modifierType,
-      upgrade.buffPercentage);
+    return {
+      name: upgrade.name,
+      initialCost: upgrade.initialCost,
+      id: upgrade.id,
+      description: upgrade.description,
+      costModifier: upgrade.costModifier,
+      timesPurchased: upgrade.timesPurchased,
+      modifierType: upgrade.modifierType,
+      buffPercentage: upgrade.buffPercentage
+    };
   });
 };
 
